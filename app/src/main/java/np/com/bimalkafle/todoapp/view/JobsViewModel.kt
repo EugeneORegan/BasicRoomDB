@@ -10,7 +10,7 @@ import np.com.bimalkafle.todoapp.MainApplication
 import java.time.Instant
 import java.util.Date
 
-class TodoViewModel : ViewModel() {
+class JobsViewModel : ViewModel() {
 
     val jobDao = MainApplication.jobsDatabase.getJobsDao()
 

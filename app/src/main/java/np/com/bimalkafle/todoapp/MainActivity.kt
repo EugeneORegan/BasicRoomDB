@@ -9,13 +9,13 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModelProvider
 import np.com.bimalkafle.todoapp.ui.theme.TodoAppTheme
-import np.com.bimalkafle.todoapp.view.TodoListPage
-import np.com.bimalkafle.todoapp.view.TodoViewModel
+import np.com.bimalkafle.todoapp.view.JobsListPage
+import np.com.bimalkafle.todoapp.view.JobsViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val todoViewModel = ViewModelProvider(this)[TodoViewModel::class.java]
+        val todoViewModel = ViewModelProvider(this)[JobsViewModel::class.java]
         setContent {
             TodoAppTheme {
                 // A surface container using the 'background' color from the theme
@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    TodoListPage(todoViewModel)
+                    JobsListPage(todoViewModel)
                 }
             }
         }

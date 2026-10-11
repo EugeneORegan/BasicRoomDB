@@ -8,7 +8,7 @@ import np.com.bimalkafle.todoapp.db.JobsDatabase
 class MainApplication : Application() {
 
     companion object {
-        lateinit var jobsDatabase: JobsDatabase
+        lateinit var jobsDatabase: JobsDatabase // Creating our database object
     }
 
     override fun onCreate() {
@@ -16,7 +16,7 @@ class MainApplication : Application() {
         jobsDatabase = databaseBuilder(
             applicationContext,
             JobsDatabase::class.java,
-            JobsDatabase.NAME
+            JobsDatabase.NAME // NAME is defined in the Database class JobsDatabase.kt
         ).build()
     }
 

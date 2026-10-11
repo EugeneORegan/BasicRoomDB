@@ -37,9 +37,9 @@ import java.util.Locale
 
 
 @Composable
-fun TodoListPage(viewModel: TodoViewModel){
+fun JobsListPage(viewModel: JobsViewModel){
 
-    val todoList by viewModel.jobList.observeAsState()
+    val jobsList by viewModel.jobList.observeAsState()
     var inputText by remember {
         mutableStateOf("")
     }
@@ -70,7 +70,7 @@ fun TodoListPage(viewModel: TodoViewModel){
             }
         }
 
-        todoList?.let {
+        jobsList?.let {
             LazyColumn(
                 content = {
                     itemsIndexed(it){index: Int, item: Job ->

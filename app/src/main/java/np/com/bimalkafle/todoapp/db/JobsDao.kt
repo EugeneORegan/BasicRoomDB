@@ -24,6 +24,9 @@ Annotations needed to specify the SQL queries type
     @Query("Delete FROM Job where id = :id")
     fun deleteJob(id : Int)
 
+    @Query("SELECT * FROM Job where id = :id")
+    fun searchJob(id : Int):LiveData<Job>
+
 }
 
 /**

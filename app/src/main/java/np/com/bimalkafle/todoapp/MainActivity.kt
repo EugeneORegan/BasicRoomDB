@@ -15,7 +15,7 @@ import np.com.bimalkafle.todoapp.view.JobsViewModel
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val todoViewModel = ViewModelProvider(this)[JobsViewModel::class.java]
+        val jobViewModel = ViewModelProvider(this)[JobsViewModel::class.java]
         setContent {
             TodoAppTheme {
                 // A surface container using the 'background' color from the theme
@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    JobsListPage(todoViewModel)
+                    JobsListPage(jobViewModel)
                 }
             }
         }

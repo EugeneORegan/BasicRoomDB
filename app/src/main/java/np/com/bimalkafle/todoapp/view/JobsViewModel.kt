@@ -13,11 +13,9 @@ import java.util.Date
 class JobsViewModel : ViewModel() {
 
     val jobDao = MainApplication.jobsDatabase.getJobsDao()
+    val jobList: LiveData<List<Job>> = jobDao.getAllJobs()
 
-    val jobList : LiveData<List<Job>> = jobDao.getAllJobs()
-
-
-    fun addJob(title : String){
+    fun addJob(title: String) {
         viewModelScope.launch(Dispatchers.IO) {
             jobDao.addJob(
                 Job(
@@ -29,11 +27,19 @@ class JobsViewModel : ViewModel() {
         }
     }
 
-    fun deleteJob(id : Int){
+    fun deleteJob(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             jobDao.deleteJob(id)
         }
     }
-
-
+    fun searchJob(id: Int): LiveData<Job> {
+        return jobDao.searchJob(id)
+    }
 }
+
+
+
+
+
+
+
